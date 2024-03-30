@@ -1,0 +1,23 @@
+<!-- students/base_meal_precancellation.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Meal Precancellation</title>
+</head>
+<body>
+    <h1>Base Meal Precancellation for {{ student.name }}</h1>
+    
+    {% if precancellations %}
+        <ul>
+            {% for precancellation in precancellations %}
+                <li>{{ precancellation.date }} - {% if precancellation.is_precancelled %}Precancelled{% else %}Not Precancelled{% endif %}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No base meal precancellations found for this student.</p>
+    {% endif %}
+</body>
+</html>
