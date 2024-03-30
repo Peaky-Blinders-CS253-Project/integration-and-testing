@@ -93,11 +93,11 @@ DATABASES = {
      'default': {
          
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',          # Replace with the name of your database
-        'USER': 'postgres',      # Replace with your PostgreSQL username
-        'PASSWORD': 'uAbtSqXXcSuCKEhQPgnbYeSumDIiytcD',  # Replace with your PostgreSQL password
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '37925',
+        'NAME': '',          # Replace with the name of your database
+        'USER': '',      # Replace with your PostgreSQL username
+        'PASSWORD': '',  # Replace with your PostgreSQL password
+        'HOST': '',
+        'PORT': '',
     }
     
 }
