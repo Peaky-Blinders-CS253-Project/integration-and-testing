@@ -22,4 +22,3 @@ fi
 # Collect static files
 echo "Collecting static files..."
 python3 manage.py collectstatic
-
