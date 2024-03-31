@@ -33,7 +33,7 @@ fi
 mkdir -p staticfiles_build/static
 
 # Set STATIC_ROOT in Django settings
-export DJANGO_SETTINGS_MODULE=your_project_name.settings
+export DJANGO_SETTINGS_MODULE=mess_automation_system.settings
 python3 -c "
 import os
 from django.conf import settings
