@@ -18,9 +18,16 @@ then
     python3 -m pip install --user django
 fi
 
+# Ensure psycopg2 is installed and compatible with Django
+DJANGO_VERSION=$(python3 -c "import django; print(django.get_version())")
+PSYCOPG2_VERSION=$(python3 -m pip show psycopg2-binary | grep -E '^Version:' | awk '{print $2}')
 
-
-
+if [ -z "$PSYCOPG2_VERSION" ]; then
+    echo "psycopg2 is not installed, installing compatible version..."
+    python3 -m pip install --user "psycopg2-binary>=2.8"
+else
+    echo "psycopg2 version $PSYCOPG2_VERSION is installed."
+fi
 
 # Collect static files
 echo "Collecting static files..."
