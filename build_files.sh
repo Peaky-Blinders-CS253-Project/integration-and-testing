@@ -29,6 +29,22 @@ else
     echo "psycopg2 version $PSYCOPG2_VERSION is installed."
 fi
 
+# Create staticfiles_build directory
+mkdir -p staticfiles_build/static
+
+# Set STATIC_ROOT in Django settings
+export DJANGO_SETTINGS_MODULE=your_project_name.settings
+python3 -c "
+import os
+from django.conf import settings
+settings.configure(
+    STATIC_ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'staticfiles_build', 'static')
+)
+print('STATIC_ROOT:', settings.STATIC_ROOT)
+"
+
 # Collect static files
 echo "Collecting static files..."
-python3 manage.py collectstatic
+python3 manage.py collectstatic --noinput --clear
+
+# Do any additional build steps here
